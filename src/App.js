@@ -45,7 +45,7 @@ class App extends React.Component {
     const { id } = e.target;
     let tasksCopy = [...this.state.tasks];
     
-    const taskToComplete = this.state.tasks.find((task, index) => {
+    this.state.tasks.find((task, index) => {
       if(task.id.toString() === id) {
         let item = {...tasksCopy[index], completed: !tasksCopy[index].completed};
         tasksCopy[index] = item;
