@@ -1,15 +1,14 @@
 import React from "react";
 
-class TodoForm extends React.Component {
-    render() {
+function TodoForm(props) {
+    const { onChangeHandler, textInputValue, addTodoTask, clearCompleted } = props;
         return (
             <div>
-                <input type='text' placeholder='...todo'/>
-                <button>Add Todo</button>
-                <button>Clear Computed</button>
+                <input type='text' placeholder='...todo' onChange={onChangeHandler} value={textInputValue}/>
+                <button onClick={addTodoTask}>Add Todo</button>
+                <button onClick={clearCompleted}>Clear Completed</button>
             </div>
         )
-    }
 }
 
 export default TodoForm;

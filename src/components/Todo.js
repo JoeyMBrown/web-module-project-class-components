@@ -1,11 +1,18 @@
 import React from 'react';
 
-class Todo extends React.Component {
-    render() {
+function Todo(props) {
+    const { task, completeTask, taskId, completed } = props;
         return (
-            <li>Example task</li>
+            <li 
+              style={{
+                textDecoration: completed ? 'line-through' : 'none'
+              }} 
+              onClick={completeTask} 
+              id={taskId}
+              >
+                  {task}
+              </li>
         )
-    }
 }
 
 export default Todo;
